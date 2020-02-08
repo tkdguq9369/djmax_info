@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <!-- Begin Header -->
+
 <div id="header" th:fragment="headerFragment">
-	<div id="navbar-full" >
+	<div id="navbar-full">
 		<div id="navbar">
 			<div style="background-color: black;">
 				<nav class="navbar navbar-default navbar-transparent"
@@ -12,41 +13,50 @@
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
 							
-							<a class="navbar-brand" href="#gsdk"><img alt=""
-								th:src="@{/assets/img/djmax.png}" style="width: 60px; height: 30px;"></a>
+							<a class="navbar-brand" th:href="@{/}"><img alt=""
+								th:src="@{/assets/img/djmax.png}" style="width: 120px; height: 50px;"></a>
 
 						</div>
-
+						<style>
+							.active{
+								font-size: 30px;
+							}
+						</style>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('.active').hover(function() {
+									  $(this).css("background-color", "#F6F6F6");
+									}, function(){
+									  $(this).css("background-color", "white");
+									});
+							})
+						</script>
 						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="navigation-example-2">
+						<div class="collapse navbar-collapse" id="navigation-example-2" style="padding-top: 20px;">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#gsdk">Link</a></li>
-								<li class="dropdown"><a href="#gsdk"
-									class="dropdown-toggle" data-toggle="dropdown">Dropdown <b
+								<li class="active"><a th:href="@{#}" style="color: black; ">4B</a></li>
+								<li class="active"><a th:href="@{#}" style="color: black;">5B</a></li>
+								<li class="active"><a th:href="@{#}" style="color: black;">6B</a></li>
+								<li class="active"><a th:href="@{#}" style="color: black;">8B</a></li>
+								<li class="dropdown"><a th:href="@{#}"
+									class="dropdown-toggle" data-toggle="dropdown"  style="color: black;">Dropdown <b
 										class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a href="#gsdk">Action</a></li>
-										<li><a href="#gsdk">Another action</a></li>
-										<li><a href="#gsdk">Something</a></li>
-										<li><a href="#gsdk">Another action</a></li>
-										<li><a href="#gsdk">Something</a></li>
+										<li><a th:href="@{#}">Action</a></li>
+										<li><a th:href="@{#}">Another action</a></li>
+										<li><a th:href="@{#}">Something</a></li>
+										<li><a th:href="@{#}">Another action</a></li>
+										<li><a th:href="@{#}">Something</a></li>
 										<li class="divider"></li>
-										<li><a href="#gsdk">Separated link</a></li>
+										<li><a th:href="@{#}">Separated link</a></li>
 									</ul></li>
-								<li><a href="javascript:void(0);" data-toggle="search"
-									class="hidden-xs"><i class="fa fa-search"></i></a></li>
+								
 							</ul>
-							<form class="navbar-form navbar-left navbar-search-form"
-								role="search">
-								<div class="form-group">
-									<input type="text" value="" class="form-control"
-										placeholder="Search...">
-								</div>
-							</form>
+							
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#gsdk">회원 가입</a></li>
+								<li><a th:href="@{#}"  style="color: black;">회원 가입</a></li>
 
-								<li><button href="#gsdk" class="btn btn-round btn-default">로그인</button></li>
+								<li><a th:href="@{#}"  style="color: black;">로그인</a></li>
 							</ul>
 
 						</div>
@@ -57,9 +67,6 @@
 					</div>
 					<!-- /.container-fluid -->
 				</nav>
-				<div class="img-src">
-					<!--<img th:src="@{/assets/img/maxresdefault.jpg}"> -->
-				</div>
 			</div>
 		</div>
 		<!--  end navbar -->
